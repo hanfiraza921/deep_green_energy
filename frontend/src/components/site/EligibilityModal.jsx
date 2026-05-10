@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -79,6 +79,9 @@ export const EligibilityModal = ({ open, onOpenChange }) => {
         className="sm:max-w-xl rounded-3xl border-slate-200 p-0 overflow-hidden gap-0"
       >
         <DialogTitle className="sr-only">{t("eligibility.title")}</DialogTitle>
+        <DialogDescription className="sr-only">
+          Multi-step eligibility check for PM Surya Ghar subsidy.
+        </DialogDescription>
 
         {done ? (
           <div className="p-10 text-center">
