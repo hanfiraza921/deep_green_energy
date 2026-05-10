@@ -1,0 +1,103 @@
+{
+  "project_context": {
+    "domain": "Solar Energy Consultancy & Government Subsidy Scheme",
+    "vibe": "Trustworthy, governmental-aligned, technologically advanced",
+    "theme": "light",
+    "archetype": "Archetype 4: Swiss & High-Contrast (Authority, Clarity, Truth) adapted for Green Energy"
+  },
+  "colors": {
+    "primary": "bg-emerald-600",
+    "primary_hover": "hover:bg-emerald-700",
+    "secondary": "bg-blue-900",
+    "secondary_hover": "hover:bg-blue-950",
+    "accent": "bg-amber-500",
+    "background": "bg-slate-50",
+    "surface": "bg-white",
+    "text_main": "text-slate-900",
+    "text_muted": "text-slate-600",
+    "border": "border-slate-200"
+  },
+  "typography": {
+    "font_family_headings": "Montserrat, sans-serif",
+    "font_family_body": "Poppins, sans-serif",
+    "h1": "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-blue-900",
+    "h2": "text-3xl sm:text-4xl font-bold tracking-tight text-blue-900",
+    "h3": "text-xl sm:text-2xl font-bold text-slate-800",
+    "body": "text-base text-slate-600 leading-relaxed",
+    "cta_text": "text-sm font-bold uppercase tracking-widest"
+  },
+  "layout_and_spacing": {
+    "section_padding": "py-20 lg:py-24",
+    "container": "max-w-7xl mx-auto px-6",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8",
+    "card_padding": "p-8",
+    "border_radius": "rounded-2xl"
+  },
+  "components": {
+    "header": {
+      "style": "sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-slate-200/50",
+      "elements": "Logo, Navigation links, Language Switcher (EN/HI), Primary CTA (Apply Now)"
+    },
+    "hero": {
+      "style": "relative flex flex-col lg:flex-row items-center gap-12 py-20 bg-slate-50 overflow-hidden",
+      "instructions": "Left: Headline, Sub-headline, Dual CTAs. Right: 3D Solar Illustration or high-quality photo with floating benefit badges. Use eco-tech background for subtle texture."
+    },
+    "subsidy_grid": {
+      "style": "Bento Grid (3 equal columns on desktop)",
+      "card_style": "bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300",
+      "instructions": "Each card represents a KW tier (1KW, 2KW, 3KW+). Highlight the subsidy amount in massive text (e.g. text-5xl font-black text-emerald-600)."
+    },
+    "key_features": {
+      "style": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8",
+      "icon_style": "w-12 h-12 text-emerald-600 mb-4",
+      "instructions": "Use lucide-react icons (Sun, ShieldCheck, Banknotes, Wrench)."
+    },
+    "partners_marquee": {
+      "style": "py-12 bg-white border-y border-slate-100",
+      "instructions": "Use react-fast-marquee. Since actual logos are unavailable, use lucide-react icons paired with text (e.g. <Zap/> Tata Power, <Sun/> Adani Solar, <Landmark/> SBI, PNB, BoB) formatted beautifully."
+    },
+    "lead_generation_form": {
+      "style": "bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 relative z-10",
+      "instructions": "Fields: Name, Phone, Monthly Bill. Use Shadcn UI Input and Button components. Button should be massive and highly converting (bg-emerald-600)."
+    }
+  },
+  "media": {
+    "images": [
+      {
+        "category": "hero_3d_illustration",
+        "url": "https://static.prod-images.emergentagent.com/jobs/1a082727-3918-493e-b092-2ccb6942d588/images/0255b7e4a11e8771a6ebda522fe9e24f6aaa24ebbb0baf1c6a382bee64b5cb93.png",
+        "description": "3D illustration of a sleek solar panel harnessing energy, floating on clean white background."
+      },
+      {
+        "category": "hero_background_texture",
+        "url": "https://static.prod-images.emergentagent.com/jobs/1a082727-3918-493e-b092-2ccb6942d588/images/337acd5146b63fc8e1a898494fc7978d1349b5c60ab2fd828614675b7be98962.png",
+        "description": "Abstract eco-friendly green and corporate blue gradient, subtle technological grid lines."
+      },
+      {
+        "category": "real_solar_panels_roof",
+        "url": "https://images.unsplash.com/photo-1655300283247-6b1924b1d152?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwxfHxzb2xhciUyMHBhbmVscyUyMHJvb2YlMjBob3VzZXxlbnwwfHx8fDE3Nzg0Mjc5Mjh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "A building with solar panels on the roof."
+      },
+      {
+        "category": "indian_family_happy",
+        "url": "https://images.pexels.com/photos/9346163/pexels-photo-9346163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Family wearing traditional Indian clothing enjoys relaxation time on sofa."
+      }
+    ]
+  },
+  "interactions_and_motion": {
+    "hover_states": "Buttons must have transform scale (hover:scale-105) and active state (active:scale-95). Links must have underline animation or color transition.",
+    "scroll_effects": "Use framer-motion for simple fade-up (y: 20, opacity: 0 -> y: 0, opacity: 1) on scroll for all major sections.",
+    "marquee": "Slow, continuous drift for the partners section using react-fast-marquee."
+  },
+  "technical_rules": {
+    "accessibility": "Ensure text contrast on hero buttons. Include aria-labels for the language switcher and icons.",
+    "testing": "All interactive elements must have data-testid attributes (e.g. data-testid='hero-cta-button').",
+    "libraries_to_install": [
+      "framer-motion",
+      "lucide-react",
+      "react-fast-marquee"
+    ]
+  },
+  "instructions_to_main_agent": "Implement a fully responsive landing page using Tailwind CSS and the provided components. The tone is authoritative yet approachable (government scheme + eco-friendly). The layout should heavily feature generous padding and stark contrast between the Corporate Blue headings and the white/slate-50 backgrounds. Use the provided 3D illustration in the hero section for a premium tech-forward feel. The partners section MUST use react-fast-marquee with lucide-react icons + text for the brands since logos are unavailable. Ensure the lead generation form is highly visible, placed either in the hero section or immediately after the Subsidy Grid."
+}
