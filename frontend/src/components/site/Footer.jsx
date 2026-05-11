@@ -12,17 +12,36 @@ export const Footer = () => {
       className="bg-blue-950 text-blue-100 pt-16 pb-8"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
             <div className="bg-white inline-flex p-3 rounded-2xl">
               <Logo />
             </div>
             <p className="mt-5 text-sm text-blue-200/80 leading-relaxed max-w-md">
               {t("footer.tagline")}
             </p>
+
+            <div className="mt-6 space-y-3 text-sm">
+              <a
+                href="tel:+919135963415"
+                data-testid="footer-phone"
+                className="flex items-start gap-2.5 hover:text-emerald-300 transition-colors"
+              >
+                <Phone className="h-4 w-4 mt-0.5 text-emerald-400 shrink-0" />
+                <span>+91 91359 63415</span>
+              </a>
+              <a
+                href="mailto:deepgreenenergyindiapvtltd@gmail.com"
+                data-testid="footer-email"
+                className="flex items-start gap-2.5 hover:text-emerald-300 transition-colors break-all"
+              >
+                <Mail className="h-4 w-4 mt-0.5 text-emerald-400 shrink-0" />
+                <span>deepgreenenergyindiapvtltd@gmail.com</span>
+              </a>
+            </div>
           </div>
 
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="font-heading text-sm font-bold uppercase tracking-widest text-white">
               {t("footer.quick")}
             </h4>
@@ -34,24 +53,36 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="lg:col-span-5">
             <h4 className="font-heading text-sm font-bold uppercase tracking-widest text-white">
-              {t("footer.contact")}
+              Our Offices
             </h4>
-            <ul className="mt-4 space-y-3 text-sm">
-              <li className="flex items-start gap-2.5">
-                <Phone className="h-4 w-4 mt-0.5 text-emerald-400 shrink-0" />
-                <span>+91 98XXX XXXXX</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <Mail className="h-4 w-4 mt-0.5 text-emerald-400 shrink-0" />
-                <span>info@deepgreenenergy.in</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <MapPin className="h-4 w-4 mt-0.5 text-emerald-400 shrink-0" />
-                <span>Patna, Bihar, India</span>
-              </li>
-            </ul>
+            <div className="mt-4 grid sm:grid-cols-2 gap-4">
+              <div
+                data-testid="office-patna"
+                className="rounded-2xl border border-blue-900/60 bg-blue-900/30 p-4"
+              >
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-300">
+                  <MapPin className="h-3.5 w-3.5" />
+                  Patna Office
+                </div>
+                <p className="mt-2 text-sm text-blue-100 leading-relaxed">
+                  New Azimabad Colony, Near Shanichra Mandir, Gaighata, Patna, Bihar — 800006
+                </p>
+              </div>
+              <div
+                data-testid="office-samastipur"
+                className="rounded-2xl border border-blue-900/60 bg-blue-900/30 p-4"
+              >
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-300">
+                  <MapPin className="h-3.5 w-3.5" />
+                  Samastipur Office
+                </div>
+                <p className="mt-2 text-sm text-blue-100 leading-relaxed">
+                  Ground Floor, Parama Hans Ray, Patori Road, Chak Salem, Samastipur, Bihar — 848504
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

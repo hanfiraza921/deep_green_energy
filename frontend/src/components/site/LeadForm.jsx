@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/i18n/LanguageContext";
-import { CheckCircle2, Phone, User, IndianRupee, Loader2, Shield } from "lucide-react";
+import { CheckCircle2, Phone, User, IndianRupee, Loader2, Shield, Mail } from "lucide-react";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -84,6 +84,43 @@ export const LeadForm = () => {
             <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-xs text-slate-600 shadow-sm">
               <Shield className="h-3.5 w-3.5 text-emerald-700" />
               <span>Your details are secure & never shared with third parties.</span>
+            </div>
+
+            <div className="mt-6 grid sm:grid-cols-2 gap-3 max-w-md">
+              <a
+                href="tel:+919135963415"
+                data-testid="contact-phone-direct"
+                className="flex items-center gap-3 rounded-2xl border border-emerald-200 bg-white px-4 py-3 hover:border-emerald-500 hover:shadow-md transition-all"
+              >
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                  <Phone className="h-4 w-4" />
+                </span>
+                <div className="flex flex-col leading-tight">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                    Call us
+                  </span>
+                  <span className="text-sm font-bold text-blue-950">
+                    +91 91359 63415
+                  </span>
+                </div>
+              </a>
+              <a
+                href="mailto:deepgreenenergyindiapvtltd@gmail.com"
+                data-testid="contact-email-direct"
+                className="flex items-center gap-3 rounded-2xl border border-blue-200 bg-white px-4 py-3 hover:border-blue-500 hover:shadow-md transition-all"
+              >
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-100 text-blue-900">
+                  <Mail className="h-4 w-4" />
+                </span>
+                <div className="flex flex-col leading-tight min-w-0">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                    Email
+                  </span>
+                  <span className="text-xs font-bold text-blue-950 truncate">
+                    deepgreenenergyindiapvtltd@gmail.com
+                  </span>
+                </div>
+              </a>
             </div>
           </div>
 
