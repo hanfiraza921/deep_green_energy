@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter, HTTPException, BackgroundTasks
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -21,6 +21,9 @@ db = client[os.environ['DB_NAME']]
 
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
+
+# Import after env load so RESEND_API_KEY is available
+from email_service import send_lead_notification  # noqa: E402
 
 
 # ------- Models -------
@@ -91,7 +94,7 @@ async def get_status_checks():
 
 
 @api_router.post("/leads", response_model=Lead, status_code=201)
-async def create_lead(payload: LeadCreate):
+async def create_lead(payload: LeadCreate, background_tasks: BackgroundTasks):
     try:
         lead = Lead(**payload.model_dump())
     except Exception as e:
@@ -99,6 +102,8 @@ async def create_lead(payload: LeadCreate):
     doc = lead.model_dump()
     doc['created_at'] = doc['created_at'].isoformat()
     await db.leads.insert_one(doc)
+    # Fire-and-forget email notification (non-blocking)
+    background_tasks.add_task(send_lead_notification, doc)
     return lead
 
 
