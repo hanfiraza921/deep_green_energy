@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import Header from "@/components/site/Header";
 import Hero from "@/components/site/Hero";
+import GovTrust from "@/components/site/GovTrust";
 import SubsidyGrid from "@/components/site/SubsidyGrid";
 import KeyFeatures from "@/components/site/KeyFeatures";
 import Services from "@/components/site/Services";
@@ -24,6 +25,7 @@ export default function Landing() {
     <main className="bg-white" data-testid="landing-page">
       <Header onApply={scrollToContact} />
       <Hero onCheckEligibility={openEligibility} onGetQuote={scrollToContact} />
+      <GovTrust />
       <SubsidyGrid onClaim={scrollToContact} />
       <KeyFeatures />
       <Services onApply={scrollToContact} />
