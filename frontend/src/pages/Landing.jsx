@@ -3,6 +3,7 @@ import Header from "@/components/site/Header";
 import Hero from "@/components/site/Hero";
 import SubsidyGrid from "@/components/site/SubsidyGrid";
 import KeyFeatures from "@/components/site/KeyFeatures";
+import Services from "@/components/site/Services";
 import PartnersMarquee from "@/components/site/PartnersMarquee";
 import BiharBanner from "@/components/site/BiharBanner";
 import LeadForm from "@/components/site/LeadForm";
@@ -25,6 +26,7 @@ export default function Landing() {
       <Hero onCheckEligibility={openEligibility} onGetQuote={scrollToContact} />
       <SubsidyGrid onClaim={scrollToContact} />
       <KeyFeatures />
+      <Services onApply={scrollToContact} />
       <PartnersMarquee />
       <BiharBanner onAction={scrollToContact} />
       <LeadForm />

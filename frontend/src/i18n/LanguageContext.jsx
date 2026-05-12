@@ -5,6 +5,7 @@ const translations = {
     nav: {
       benefits: "Benefits",
       features: "Features",
+      services: "Services",
       partners: "Partners",
       contact: "Contact",
       apply: "Apply Now",
@@ -20,7 +21,7 @@ const translations = {
       ctaSecondary: "Get a Free Quote",
       stat1: "1 Crore+ Homes Targeted",
       stat2: "₹78,000 Max Subsidy",
-      stat3: "30 Year Warranty",
+      stat3: "5 Year Warranty",
     },
     subsidy: {
       eyebrow: "Subsidy Tiers",
@@ -42,9 +43,9 @@ const translations = {
       f1Title: "Zero Electricity Bills",
       f1Desc:
         "Eliminate monthly costs. Generate your own power and even sell surplus back to the grid.",
-      f2Title: "30-Year Warranty",
+      f2Title: "5-Year Warranty",
       f2Desc:
-        "Tier-1 panels with industry-leading performance warranty for long-term reliability.",
+        "Comprehensive 5-year company warranty on installation, inverter and workmanship for complete peace of mind.",
       f3Title: "Easy Financing",
       f3Desc:
         "Low-interest solar loans from leading banks — SBI, PNB, and Bank of Baroda.",
@@ -112,6 +113,7 @@ const translations = {
     nav: {
       benefits: "लाभ",
       features: "विशेषताएँ",
+      services: "सेवाएँ",
       partners: "साझेदार",
       contact: "संपर्क",
       apply: "अभी आवेदन करें",
@@ -127,7 +129,7 @@ const translations = {
       ctaSecondary: "मुफ्त कोटेशन पाएँ",
       stat1: "1 करोड़+ घर लक्षित",
       stat2: "₹78,000 अधिकतम सब्सिडी",
-      stat3: "30 वर्ष वारंटी",
+      stat3: "5 वर्ष वारंटी",
     },
     subsidy: {
       eyebrow: "सब्सिडी स्तर",
@@ -148,8 +150,8 @@ const translations = {
       title: "विश्वास के लिए बना। बचत के लिए इंजीनियर्ड।",
       f1Title: "शून्य बिजली बिल",
       f1Desc: "मासिक खर्च खत्म करें। अपनी बिजली बनाएँ और अतिरिक्त ग्रिड को बेचें।",
-      f2Title: "30-वर्ष वारंटी",
-      f2Desc: "टियर-1 पैनल लंबे समय तक की विश्वसनीयता के साथ।",
+      f2Title: "5-वर्ष वारंटी",
+      f2Desc: "इंस्टॉलेशन, इन्वर्टर और कारीगरी पर व्यापक 5-वर्ष कंपनी वारंटी।",
       f3Title: "आसान फाइनेंसिंग",
       f3Desc: "एसबीआई, पीएनबी और बैंक ऑफ बड़ौदा से कम ब्याज पर सोलर लोन।",
       f4Title: "एंड-टू-एंड सहायता",

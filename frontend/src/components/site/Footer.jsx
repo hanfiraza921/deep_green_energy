@@ -48,6 +48,7 @@ export const Footer = () => {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li><a href="#benefits" className="hover:text-emerald-300 transition-colors">{t("nav.benefits")}</a></li>
               <li><a href="#features" className="hover:text-emerald-300 transition-colors">{t("nav.features")}</a></li>
+              <li><a href="#services" className="hover:text-emerald-300 transition-colors">{t("nav.services")}</a></li>
               <li><a href="#partners" className="hover:text-emerald-300 transition-colors">{t("nav.partners")}</a></li>
               <li><a href="#contact" className="hover:text-emerald-300 transition-colors">{t("nav.contact")}</a></li>
             </ul>

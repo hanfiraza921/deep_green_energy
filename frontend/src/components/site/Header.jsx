@@ -24,6 +24,7 @@ export const Header = ({ onApply }) => {
   const navItems = [
     { href: "#benefits", label: t("nav.benefits") },
     { href: "#features", label: t("nav.features") },
+    { href: "#services", label: t("nav.services") },
     { href: "#partners", label: t("nav.partners") },
     { href: "#contact", label: t("nav.contact") },
   ];

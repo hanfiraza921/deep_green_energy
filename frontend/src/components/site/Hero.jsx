@@ -151,7 +151,7 @@ export const Hero = ({ onCheckEligibility, onGetQuote }) => {
                   <div className="text-[10px] uppercase tracking-widest text-blue-200">
                     Backed by
                   </div>
-                  <div className="font-heading font-bold text-sm">30-Yr Warranty</div>
+                  <div className="font-heading font-bold text-sm">5-Yr Warranty</div>
                 </div>
               </motion.div>
             </div>
