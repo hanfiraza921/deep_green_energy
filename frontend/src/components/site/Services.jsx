@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useLang } from "@/i18n/LanguageContext";
-import { ShieldCheck, ArrowUpRight } from "lucide-react";
+import { ShieldCheck, ArrowUpRight, Check } from "lucide-react";
 
 const SERVICES = [
   {
@@ -9,9 +9,21 @@ const SERVICES = [
     titleEn: "Solar Designing",
     titleHi: "सोलर डिज़ाइनिंग",
     descEn:
-      "Custom solar system design tailored to your rooftop, load profile and budget. CAD layouts + shadow analysis included.",
+      "Custom solar system design tailored to your rooftop, load profile and budget. Engineered for maximum generation.",
     descHi:
-      "आपकी छत, लोड प्रोफ़ाइल और बजट के अनुरूप कस्टम सोलर सिस्टम डिज़ाइन। CAD लेआउट और छाया विश्लेषण शामिल।",
+      "आपकी छत, लोड प्रोफ़ाइल और बजट के अनुरूप कस्टम सोलर सिस्टम डिज़ाइन। अधिकतम जनरेशन के लिए इंजीनियर्ड।",
+    pointsEn: [
+      "Site survey + shadow analysis",
+      "3D CAD layout & single-line diagrams",
+      "Component sizing (panels, inverter, cables)",
+      "Generation forecast in kWh / year",
+    ],
+    pointsHi: [
+      "साइट सर्वे और छाया विश्लेषण",
+      "3D CAD लेआउट और सिंगल-लाइन डायग्राम",
+      "कंपोनेंट साइज़िंग (पैनल, इन्वर्टर, केबल)",
+      "kWh / वर्ष में जनरेशन पूर्वानुमान",
+    ],
   },
   {
     key: "om",
@@ -19,9 +31,21 @@ const SERVICES = [
     titleEn: "Solar Operation & Maintenance",
     titleHi: "सोलर ऑपरेशन और रख-रखाव",
     descEn:
-      "End-to-end O&M with remote monitoring, quarterly site visits and 24×7 fault resolution to maximize plant generation.",
+      "Comprehensive O&M to keep your plant running at peak efficiency. Generation guarantee included.",
     descHi:
-      "रिमोट मॉनिटरिंग, त्रैमासिक साइट विज़िट और 24×7 फॉल्ट समाधान के साथ संपूर्ण ओ एंड एम।",
+      "आपके प्लांट को अधिकतम दक्षता पर चलाने के लिए संपूर्ण ओ एंड एम। जनरेशन गारंटी शामिल।",
+    pointsEn: [
+      "24×7 remote monitoring & alerts",
+      "Quarterly preventive site visits",
+      "Inverter & string health checks",
+      "Performance ratio reports",
+    ],
+    pointsHi: [
+      "24×7 रिमोट मॉनिटरिंग और अलर्ट",
+      "त्रैमासिक निवारक साइट विज़िट",
+      "इन्वर्टर और स्ट्रिंग हेल्थ चेक",
+      "प्रदर्शन अनुपात रिपोर्ट",
+    ],
   },
   {
     key: "epc",
@@ -29,9 +53,21 @@ const SERVICES = [
     titleEn: "Solar EPC",
     titleHi: "सोलर EPC",
     descEn:
-      "Turnkey Engineering, Procurement & Construction — from approvals and structure to commissioning and net-metering.",
+      "Turnkey Engineering, Procurement & Construction — we handle the entire project from paperwork to power-on.",
     descHi:
-      "टर्नकी इंजीनियरिंग, प्रोक्योरमेंट और कंस्ट्रक्शन — अनुमोदन से लेकर नेट-मीटरिंग तक।",
+      "टर्नकी इंजीनियरिंग, प्रोक्योरमेंट और कंस्ट्रक्शन — कागज़ी कार्रवाई से लेकर बिजली चालू होने तक का पूरा प्रोजेक्ट।",
+    pointsEn: [
+      "DISCOM approvals & net-metering",
+      "Tier-1 panel & inverter procurement",
+      "Mounting structure & DC/AC wiring",
+      "Commissioning + subsidy paperwork",
+    ],
+    pointsHi: [
+      "DISCOM अनुमोदन और नेट-मीटरिंग",
+      "टियर-1 पैनल और इन्वर्टर खरीद",
+      "माउंटिंग संरचना और DC/AC वायरिंग",
+      "कमिशनिंग + सब्सिडी कागज़ी कार्रवाई",
+    ],
   },
   {
     key: "inspection",
@@ -39,9 +75,21 @@ const SERVICES = [
     titleEn: "Module Inspection & Quality Testing",
     titleHi: "मॉड्यूल निरीक्षण और गुणवत्ता परीक्षण",
     descEn:
-      "EL imaging, IV-curve tracing and thermography for every module — only Tier-1 panels reach your roof.",
+      "Every panel is lab-tested before it reaches your roof. Detect micro-cracks, hotspots and PID before installation.",
     descHi:
-      "हर मॉड्यूल की EL इमेजिंग, IV-कर्व ट्रेसिंग और थर्मोग्राफी — केवल टियर-1 पैनल आपकी छत तक पहुँचते हैं।",
+      "हर पैनल आपकी छत पर पहुँचने से पहले लैब-टेस्टेड होता है। इंस्टॉलेशन से पहले माइक्रो-क्रैक, हॉटस्पॉट और PID का पता लगाएँ।",
+    pointsEn: [
+      "Electroluminescence (EL) imaging",
+      "IV-curve tracing & flash testing",
+      "Thermal imaging for hotspots",
+      "BIS / IEC 61215 compliance check",
+    ],
+    pointsHi: [
+      "इलेक्ट्रोल्यूमिनेसेंस (EL) इमेजिंग",
+      "IV-कर्व ट्रेसिंग और फ्लैश टेस्टिंग",
+      "हॉटस्पॉट के लिए थर्मल इमेजिंग",
+      "BIS / IEC 61215 अनुपालन जाँच",
+    ],
   },
   {
     key: "maintenance",
@@ -49,9 +97,21 @@ const SERVICES = [
     titleEn: "Maintenance Service",
     titleHi: "रख-रखाव सेवा",
     descEn:
-      "Scheduled cleaning, inverter health checks and rapid repair across all 38 Bihar districts under one AMC.",
+      "On-call repair and AMC plans across all 38 Bihar districts. Same-day response in major cities.",
     descHi:
-      "एक ही AMC के तहत बिहार के सभी 38 ज़िलों में सफाई, इन्वर्टर हेल्थ चेक और त्वरित मरम्मत।",
+      "बिहार के सभी 38 ज़िलों में ऑन-कॉल मरम्मत और AMC प्लान। प्रमुख शहरों में उसी दिन प्रतिक्रिया।",
+    pointsEn: [
+      "Scheduled panel cleaning",
+      "Inverter repair & replacement",
+      "Wiring & earthing checks",
+      "Annual Maintenance Contract (AMC)",
+    ],
+    pointsHi: [
+      "नियमित पैनल सफाई",
+      "इन्वर्टर मरम्मत और प्रतिस्थापन",
+      "वायरिंग और अर्थिंग जाँच",
+      "वार्षिक रख-रखाव अनुबंध (AMC)",
+    ],
   },
 ];
 
@@ -107,42 +167,66 @@ export const Services = ({ onApply }) => {
 
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
           {SERVICES.map((s, i) => (
-            <motion.button
+            <motion.div
               key={s.key}
-              type="button"
               data-testid={`service-card-${s.key}`}
-              onClick={onApply}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative text-left rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-1 hover:border-emerald-300 transition-all duration-300"
+              className="group relative flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-1 hover:border-emerald-300 transition-all duration-300"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+              <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
                 <img
                   src={s.img}
                   alt={isHi ? s.titleHi : s.titleEn}
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-950/20 to-transparent" />
                 <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-700">
                   <ShieldCheck className="h-3 w-3" />
-                  {isHi ? "5 साल" : "5-Yr Warranty"}
+                  {isHi ? "5 साल वारंटी" : "5-Yr Warranty"}
                 </span>
-                <span className="absolute bottom-4 right-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg shadow-emerald-600/40 transition-transform group-hover:scale-110 group-hover:rotate-45">
-                  <ArrowUpRight className="h-5 w-5" strokeWidth={2.5} />
-                </span>
+                <div className="absolute bottom-4 left-5 right-5">
+                  <h3 className="font-heading text-xl lg:text-2xl font-black text-white leading-tight drop-shadow">
+                    {isHi ? s.titleHi : s.titleEn}
+                  </h3>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-heading text-lg lg:text-xl font-bold text-blue-950">
-                  {isHi ? s.titleHi : s.titleEn}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+
+              <div className="flex flex-col flex-1 p-6">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {isHi ? s.descHi : s.descEn}
                 </p>
+
+                <ul className="mt-5 space-y-2.5 flex-1">
+                  {(isHi ? s.pointsHi : s.pointsEn).map((p) => (
+                    <li
+                      key={p}
+                      className="flex items-start gap-2.5 text-sm text-slate-700"
+                    >
+                      <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                        <Check className="h-3 w-3" strokeWidth={3.5} />
+                      </span>
+                      <span className="leading-relaxed">{p}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <button
+                  type="button"
+                  data-testid={`service-cta-${s.key}`}
+                  onClick={onApply}
+                  className="mt-6 inline-flex items-center justify-between gap-2 rounded-full bg-slate-50 hover:bg-emerald-600 hover:text-white text-blue-950 font-bold uppercase tracking-wider text-xs px-5 py-3 transition-all group/btn"
+                >
+                  <span>{isHi ? "विवरण माँगें" : "Request Details"}</span>
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600 text-white transition-transform group-hover/btn:rotate-45">
+                    <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
+                  </span>
+                </button>
               </div>
-            </motion.button>
+            </motion.div>
           ))}
 
           {/* 6th tile - CTA card */}
@@ -152,7 +236,7 @@ export const Services = ({ onApply }) => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 5 * 0.08 }}
             data-testid="service-cta-card"
-            className="relative rounded-3xl overflow-hidden bg-blue-950 text-white p-7 lg:p-8 flex flex-col justify-between"
+            className="relative rounded-3xl overflow-hidden bg-blue-950 text-white p-7 lg:p-8 flex flex-col justify-between min-h-[400px]"
           >
             <div
               aria-hidden
@@ -174,9 +258,24 @@ export const Services = ({ onApply }) => {
               </h3>
               <p className="mt-3 text-sm text-blue-200 leading-relaxed">
                 {isHi
-                  ? "हमारा प्रमाणित इंजीनियर 48 घंटे के भीतर साइट विज़िट करेगा।"
-                  : "Our certified engineer will visit your site within 48 hours."}
+                  ? "हमारा प्रमाणित इंजीनियर 48 घंटे के भीतर साइट विज़िट करेगा। कोई शुल्क नहीं, कोई बाध्यता नहीं।"
+                  : "Our certified engineer will visit your site within 48 hours. No fee, no obligation."}
               </p>
+
+              <ul className="mt-5 space-y-2">
+                {(isHi
+                  ? ["मुफ्त परामर्श", "स्थान पर निरीक्षण", "व्यक्तिगत कोटेशन"]
+                  : ["Free consultation", "On-site inspection", "Custom quote"]
+                ).map((b) => (
+                  <li
+                    key={b}
+                    className="flex items-center gap-2 text-sm text-emerald-200"
+                  >
+                    <Check className="h-4 w-4 text-emerald-400" strokeWidth={3} />
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </div>
             <button
               type="button"
