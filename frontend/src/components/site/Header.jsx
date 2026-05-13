@@ -25,6 +25,7 @@ export const Header = ({ onApply }) => {
     { href: "#benefits", label: t("nav.benefits") },
     { href: "#features", label: t("nav.features") },
     { href: "#services", label: t("nav.services") },
+    { href: "#installations", label: t("nav.installations") },
     { href: "#partners", label: t("nav.partners") },
     { href: "#contact", label: t("nav.contact") },
   ];
