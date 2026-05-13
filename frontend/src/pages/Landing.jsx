@@ -5,6 +5,7 @@ import GovTrust from "@/components/site/GovTrust";
 import SubsidyGrid from "@/components/site/SubsidyGrid";
 import KeyFeatures from "@/components/site/KeyFeatures";
 import Services from "@/components/site/Services";
+import Installations from "@/components/site/Installations";
 import PartnersMarquee from "@/components/site/PartnersMarquee";
 import BiharBanner from "@/components/site/BiharBanner";
 import LeadForm from "@/components/site/LeadForm";
@@ -29,6 +30,7 @@ export default function Landing() {
       <SubsidyGrid onClaim={scrollToContact} />
       <KeyFeatures />
       <Services onApply={scrollToContact} />
+      <Installations />
       <PartnersMarquee />
       <BiharBanner onAction={scrollToContact} />
       <LeadForm />
