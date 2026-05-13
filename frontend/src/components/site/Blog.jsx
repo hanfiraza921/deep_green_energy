@@ -80,7 +80,7 @@ const POSTS = [
   },
   {
     key: "roi",
-    img: "https://images.unsplash.com/photo-1605980776566-0486c3ac7617?auto=format&fit=crop&w=900&q=70",
+    img: "https://images.pexels.com/photos/9346163/pexels-photo-9346163.jpeg?auto=compress&cs=tinysrgb&w=900",
     categoryEn: "Savings",
     categoryHi: "बचत",
     titleEn: "How Much Will You Actually Save in 25 Years? A Real ROI Breakdown",
