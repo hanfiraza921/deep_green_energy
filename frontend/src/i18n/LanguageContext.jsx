@@ -5,6 +5,7 @@ const translations = {
     nav: {
       benefits: "Benefits",
       features: "Features",
+      about: "About",
       services: "Services",
       installations: "Installations",
       partners: "Partners",
@@ -117,6 +118,7 @@ const translations = {
     nav: {
       benefits: "लाभ",
       features: "विशेषताएँ",
+      about: "हमारे बारे में",
       services: "सेवाएँ",
       installations: "इंस्टॉलेशन",
       partners: "साझेदार",

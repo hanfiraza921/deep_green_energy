@@ -4,6 +4,7 @@ import Hero from "@/components/site/Hero";
 import GovTrust from "@/components/site/GovTrust";
 import SubsidyGrid from "@/components/site/SubsidyGrid";
 import KeyFeatures from "@/components/site/KeyFeatures";
+import AboutUs from "@/components/site/AboutUs";
 import Services from "@/components/site/Services";
 import Installations from "@/components/site/Installations";
 import PartnersMarquee from "@/components/site/PartnersMarquee";
@@ -29,6 +30,7 @@ export default function Landing() {
       <GovTrust />
       <SubsidyGrid onClaim={scrollToContact} />
       <KeyFeatures />
+      <AboutUs />
       <Services onApply={scrollToContact} />
       <Installations />
       <PartnersMarquee />
