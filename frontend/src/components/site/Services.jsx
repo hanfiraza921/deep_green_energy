@@ -49,7 +49,7 @@ const SERVICES = [
   },
   {
     key: "epc",
-    img: "https://images.unsplash.com/photo-1605980776566-0486c3ac7617?auto=format&fit=crop&w=900&q=70",
+    img: "https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg?auto=compress&cs=tinysrgb&w=900",
     titleEn: "Solar EPC",
     titleHi: "सोलर EPC",
     descEn:
