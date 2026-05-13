@@ -46,7 +46,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://www.instagram.com/deep_green_energy_india_pvtltd/"
+                  href="https://www.instagram.com/deep_green_energy_india_pvtltd?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="social-instagram"
@@ -56,7 +56,7 @@ export const Footer = () => {
                   <Instagram className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.facebook.com/profile.php?id=61588617616469"
+                  href="https://www.facebook.com/people/Deep-Green-Energy-India-Private-limited/61588617616469/"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="social-facebook"
