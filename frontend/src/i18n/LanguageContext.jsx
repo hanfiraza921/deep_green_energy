@@ -22,6 +22,7 @@ const translations = {
       stat1: "1 Crore+ Homes Targeted",
       stat2: "₹78,000 Max Subsidy",
       stat3: "5 Year Warranty",
+      deliveryBadge: "Free Home Delivery across all 38 Bihar districts",
     },
     subsidy: {
       eyebrow: "Subsidy Tiers",
@@ -130,6 +131,7 @@ const translations = {
       stat1: "1 करोड़+ घर लक्षित",
       stat2: "₹78,000 अधिकतम सब्सिडी",
       stat3: "5 वर्ष वारंटी",
+      deliveryBadge: "बिहार के सभी 38 ज़िलों में मुफ्त होम डिलीवरी",
     },
     subsidy: {
       eyebrow: "सब्सिडी स्तर",

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ShieldCheck, Sparkles, IndianRupee } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles, IndianRupee, Truck } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const HERO_IMG =
@@ -64,7 +64,19 @@ export const Hero = ({ onCheckEligibility, onGetQuote }) => {
               {t("hero.subtitle")}
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div
+              data-testid="hero-delivery-badge"
+              className="mt-5 inline-flex items-center gap-2.5 rounded-full bg-blue-950 text-white pl-2 pr-4 py-1.5 shadow-md"
+            >
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500 text-blue-950">
+                <Truck className="h-4 w-4" strokeWidth={2.4} />
+              </span>
+              <span className="text-xs sm:text-sm font-bold tracking-wide">
+                {t("hero.deliveryBadge")}
+              </span>
+            </div>
+
+            <div className="mt-7 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button
                 data-testid="hero-cta-eligibility"
                 onClick={onCheckEligibility}
