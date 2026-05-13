@@ -1,6 +1,6 @@
 import { useLang } from "@/i18n/LanguageContext";
 import Logo from "@/components/site/Logo";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 
 export const Footer = () => {
   const { t } = useLang();
@@ -38,6 +38,34 @@ export const Footer = () => {
                 <Mail className="h-4 w-4 mt-0.5 text-emerald-400 shrink-0" />
                 <span>deepgreenenergyindiapvtltd@gmail.com</span>
               </a>
+            </div>
+
+            <div className="mt-6">
+              <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-300 mb-3">
+                {t("footer.follow") || "Follow us"}
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com/deep_green_energy_india_pvtltd/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="social-instagram"
+                  aria-label="Instagram"
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-900/50 border border-blue-800 text-blue-100 hover:bg-gradient-to-br hover:from-pink-500 hover:via-orange-500 hover:to-yellow-500 hover:text-white hover:border-transparent transition-all hover:scale-110"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61588617616469"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="social-facebook"
+                  aria-label="Facebook"
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-900/50 border border-blue-800 text-blue-100 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all hover:scale-110"
+                >
+                  <Facebook className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </div>
 
