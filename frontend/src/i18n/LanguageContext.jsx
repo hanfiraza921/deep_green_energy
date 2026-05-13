@@ -80,6 +80,8 @@ const translations = {
       placeholderName: "e.g. Rajesh Kumar",
       placeholderPhone: "10-digit mobile number",
       placeholderBill: "e.g. 2500",
+      district: "District",
+      districtPlaceholder: "Select your district",
     },
     eligibility: {
       title: "Check Your Eligibility",
@@ -184,6 +186,8 @@ const translations = {
       placeholderName: "उदा. राजेश कुमार",
       placeholderPhone: "10-अंकीय मोबाइल नंबर",
       placeholderBill: "उदा. 2500",
+      district: "ज़िला",
+      districtPlaceholder: "अपना ज़िला चुनें",
     },
     eligibility: {
       title: "अपनी पात्रता जाँचें",

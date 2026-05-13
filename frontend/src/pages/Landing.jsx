@@ -29,6 +29,7 @@ export default function Landing() {
       <SubsidyGrid onClaim={scrollToContact} />
       <KeyFeatures />
       <Services onApply={scrollToContact} />
+      <Installations />
       <PartnersMarquee />
       <BiharBanner onAction={scrollToContact} />
       <LeadForm />

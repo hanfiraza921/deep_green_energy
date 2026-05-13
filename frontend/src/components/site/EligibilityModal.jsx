@@ -6,8 +6,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useLang } from "@/i18n/LanguageContext";
 import { ArrowRight, ArrowLeft, CheckCircle2, Loader2, Sparkles } from "lucide-react";
+import { BIHAR_DISTRICTS } from "@/data/biharDistricts";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -20,6 +28,7 @@ export const EligibilityModal = ({ open, onOpenChange }) => {
     monthly_bill: "",
     name: "",
     phone: "",
+    district: "",
   });
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
@@ -28,7 +37,14 @@ export const EligibilityModal = ({ open, onOpenChange }) => {
 
   const reset = () => {
     setStep(0);
-    setAnswers({ rooftop_type: "", space: "", monthly_bill: "", name: "", phone: "" });
+    setAnswers({
+      rooftop_type: "",
+      space: "",
+      monthly_bill: "",
+      name: "",
+      phone: "",
+      district: "",
+    });
     setDone(false);
   };
 
@@ -53,6 +69,7 @@ export const EligibilityModal = ({ open, onOpenChange }) => {
         monthly_bill: String(answers.monthly_bill || "0"),
         rooftop_type: answers.rooftop_type,
         system_size: answers.space,
+        district: answers.district,
         source: "eligibility_modal",
       });
       setDone(true);
@@ -180,6 +197,29 @@ export const EligibilityModal = ({ open, onOpenChange }) => {
                       placeholder={t("form.placeholderPhone")}
                       className="mt-2 h-12 rounded-xl"
                     />
+                  </div>
+                  <div>
+                    <Label className="text-xs font-bold uppercase tracking-widest text-slate-700">
+                      {t("form.district")}
+                    </Label>
+                    <Select
+                      value={answers.district}
+                      onValueChange={(v) => setAnswers({ ...answers, district: v })}
+                    >
+                      <SelectTrigger
+                        data-testid="eligibility-input-district"
+                        className="mt-2 h-12 rounded-xl"
+                      >
+                        <SelectValue placeholder={t("form.districtPlaceholder")} />
+                      </SelectTrigger>
+                      <SelectContent className="max-h-72">
+                        {BIHAR_DISTRICTS.map((d) => (
+                          <SelectItem key={d} value={d}>
+                            {d}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
               )}

@@ -5,14 +5,36 @@ import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useLang } from "@/i18n/LanguageContext";
-import { CheckCircle2, Phone, User, IndianRupee, Loader2, Shield, Mail } from "lucide-react";
+import {
+  CheckCircle2,
+  Phone,
+  User,
+  IndianRupee,
+  Loader2,
+  Shield,
+  Mail,
+  MapPin,
+} from "lucide-react";
+import { BIHAR_DISTRICTS } from "@/data/biharDistricts";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export const LeadForm = () => {
   const { t } = useLang();
-  const [form, setForm] = useState({ name: "", phone: "", monthly_bill: "" });
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    monthly_bill: "",
+    district: "",
+  });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -22,20 +44,24 @@ export const LeadForm = () => {
       toast.error("Please enter a valid name and 10-digit phone number");
       return;
     }
+    if (!form.district) {
+      toast.error("Please select your district");
+      return;
+    }
     setLoading(true);
     try {
       await axios.post(`${API}/leads`, {
         name: form.name.trim(),
         phone: form.phone,
         monthly_bill: String(form.monthly_bill || "0"),
+        district: form.district,
         source: "lead_form",
       });
       setSuccess(true);
-      setForm({ name: "", phone: "", monthly_bill: "" });
+      setForm({ name: "", phone: "", monthly_bill: "", district: "" });
       toast.success(t("form.success"));
     } catch (err) {
-      const msg =
-        err?.response?.data?.detail || t("form.error");
+      const msg = err?.response?.data?.detail || t("form.error");
       toast.error(typeof msg === "string" ? msg : t("form.error"));
     } finally {
       setLoading(false);
@@ -135,10 +161,7 @@ export const LeadForm = () => {
               <div className="absolute -top-4 -left-4 right-12 bottom-12 rounded-3xl bg-gradient-to-br from-emerald-200 to-blue-200 -z-10 blur-md" />
               <div className="bg-white rounded-3xl shadow-2xl shadow-blue-950/10 border border-slate-100 p-7 sm:p-10">
                 {success ? (
-                  <div
-                    data-testid="lead-form-success"
-                    className="text-center py-10"
-                  >
+                  <div data-testid="lead-form-success" className="text-center py-10">
                     <div className="mx-auto h-16 w-16 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
                       <CheckCircle2 className="h-8 w-8 text-emerald-600" />
                     </div>
@@ -208,29 +231,66 @@ export const LeadForm = () => {
                       </div>
                     </div>
 
-                    <div>
-                      <Label
-                        htmlFor="lead-bill"
-                        className="text-xs font-bold uppercase tracking-widest text-slate-700"
-                      >
-                        {t("form.bill")}
-                      </Label>
-                      <div className="relative mt-2">
-                        <IndianRupee className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                        <Input
-                          id="lead-bill"
-                          data-testid="lead-input-bill"
-                          inputMode="numeric"
-                          value={form.monthly_bill}
-                          onChange={(e) =>
-                            setForm({
-                              ...form,
-                              monthly_bill: e.target.value.replace(/\D/g, "").slice(0, 6),
-                            })
-                          }
-                          placeholder={t("form.placeholderBill")}
-                          className="h-12 pl-10 rounded-xl border-slate-200 focus-visible:ring-emerald-500"
-                        />
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div>
+                        <Label
+                          htmlFor="lead-bill"
+                          className="text-xs font-bold uppercase tracking-widest text-slate-700"
+                        >
+                          {t("form.bill")}
+                        </Label>
+                        <div className="relative mt-2">
+                          <IndianRupee className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                          <Input
+                            id="lead-bill"
+                            data-testid="lead-input-bill"
+                            inputMode="numeric"
+                            value={form.monthly_bill}
+                            onChange={(e) =>
+                              setForm({
+                                ...form,
+                                monthly_bill: e.target.value.replace(/\D/g, "").slice(0, 6),
+                              })
+                            }
+                            placeholder={t("form.placeholderBill")}
+                            className="h-12 pl-10 rounded-xl border-slate-200 focus-visible:ring-emerald-500"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label
+                          htmlFor="lead-district"
+                          className="text-xs font-bold uppercase tracking-widest text-slate-700"
+                        >
+                          {t("form.district")}
+                        </Label>
+                        <div className="relative mt-2">
+                          <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 z-10" />
+                          <Select
+                            value={form.district}
+                            onValueChange={(v) => setForm({ ...form, district: v })}
+                          >
+                            <SelectTrigger
+                              id="lead-district"
+                              data-testid="lead-input-district"
+                              className="h-12 pl-10 rounded-xl border-slate-200 focus:ring-emerald-500"
+                            >
+                              <SelectValue placeholder={t("form.districtPlaceholder")} />
+                            </SelectTrigger>
+                            <SelectContent className="max-h-72">
+                              {BIHAR_DISTRICTS.map((d) => (
+                                <SelectItem
+                                  key={d}
+                                  value={d}
+                                  data-testid={`district-opt-${d.replace(/\s+/g, "-").toLowerCase()}`}
+                                >
+                                  {d}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        </div>
                       </div>
                     </div>
 
